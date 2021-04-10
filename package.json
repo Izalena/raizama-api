@@ -1,0 +1,19 @@
+{
+  "name": "raizama-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test:unit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Izalena/raizama-api.git"
+  },
+  "author": "izalena",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Izalena/raizama-api/issues"
+  },
+  "homepage": "https://github.com/Izalena/raizama-api#readme"
+}
