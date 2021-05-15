@@ -1,0 +1,17 @@
+/Users/izalena.barbosa/Documents/raizama-api/src/main/java/br/com/alura/forum/ForumApplication.java
+/Users/izalena.barbosa/Documents/raizama-api/src/main/java/br/com/alura/forum/modelo/Resposta.java
+/Users/izalena.barbosa/Documents/raizama-api/src/main/java/br/com/alura/forum/modelo/Topico.java
+/Users/izalena.barbosa/Documents/raizama-api/src/main/java/br/com/alura/forum/controller/HelloController.java
+/Users/izalena.barbosa/Documents/raizama-api/src/main/java/br/com/alura/forum/controller/dto/TopicoDto.java
+/Users/izalena.barbosa/Documents/raizama-api/src/main/java/br/com/alura/forum/controller/dto/RespostaDto.java
+/Users/izalena.barbosa/Documents/raizama-api/src/main/java/br/com/alura/forum/repository/TopicoRepository.java
+/Users/izalena.barbosa/Documents/raizama-api/src/main/java/br/com/alura/forum/modelo/StatusTopico.java
+/Users/izalena.barbosa/Documents/raizama-api/src/main/java/br/com/alura/forum/controller/dto/DetalhesDoTopicoDto.java
+/Users/izalena.barbosa/Documents/raizama-api/src/main/java/br/com/alura/forum/config/validacao/ErroDeFormularioDto.java
+/Users/izalena.barbosa/Documents/raizama-api/src/main/java/br/com/alura/forum/repository/CursoRepository.java
+/Users/izalena.barbosa/Documents/raizama-api/src/main/java/br/com/alura/forum/modelo/Usuario.java
+/Users/izalena.barbosa/Documents/raizama-api/src/main/java/br/com/alura/forum/modelo/Curso.java
+/Users/izalena.barbosa/Documents/raizama-api/src/main/java/br/com/alura/forum/controller/form/TopicoForm.java
+/Users/izalena.barbosa/Documents/raizama-api/src/main/java/br/com/alura/forum/controller/form/AtualizacaoTopicoForm.java
+/Users/izalena.barbosa/Documents/raizama-api/src/main/java/br/com/alura/forum/config/validacao/ErroDeValidacaoHandler.java
+/Users/izalena.barbosa/Documents/raizama-api/src/main/java/br/com/alura/forum/controller/TopicosController.java
