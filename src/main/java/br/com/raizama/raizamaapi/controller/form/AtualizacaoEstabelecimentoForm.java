@@ -1,55 +1,55 @@
 package br.com.raizama.raizamaapi.controller.form;
 
 import br.com.raizama.raizamaapi.modelo.Endereco;
-import br.com.raizama.raizamaapi.modelo.Estabelecimento;
-import br.com.raizama.raizamaapi.modelo.Pratica;
-import br.com.raizama.raizamaapi.repository.EstabelecimentoRepository;
-import org.hibernate.validator.constraints.Length;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class AtualizacaoEstabelecimentoForm {
-    @NotNull
-    @NotEmpty
-    @Length(max = 50)
+    @NotNull @NotEmpty
     private String nomeFantasia;
-    private Endereco endereco;
-    private List<Pratica> praticas = new ArrayList<>();
+    @NotNull @NotEmpty
+    private String tipo;
+    @NotNull @NotEmpty
+    private Long latitude;
+    @NotNull @NotEmpty
+    private Long longitude;
+    @NotNull @NotEmpty
+    private String pais;
+    @NotNull @NotEmpty
+    private String estado;
+    @NotNull @NotEmpty
+    private String cidade;
+    @NotNull @NotEmpty
+    private String logradouro;
 
-    public String getNomeFantasia() {
-        return nomeFantasia;
-    }
+    private String complemento;
+    @NotNull @NotEmpty
+    private int numero;
 
-    public void setNomeFantasia(String nomeFantasia) {
-        this.nomeFantasia = nomeFantasia;
-    }
+    private int cep;
 
-    public Endereco getEndereco() {
-        return endereco;
-    }
+    private List<String> praticas;
 
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
-    }
 
-    public List<Pratica> getPraticas() {
-        return praticas;
-    }
-
-    public void setPraticas(List<Pratica> praticas) {
-        this.praticas = praticas;
-    }
-
-    public Estabelecimento atualizar(Long id, EstabelecimentoRepository estabelecimentoRepository) {
-        Estabelecimento estabelecimento = estabelecimentoRepository.getOne(id);
-
-        estabelecimento.setEndereco(endereco);
-        estabelecimento.setNomeFantasia(nomeFantasia);
-        estabelecimento.setPraticas(praticas);
-
-        return estabelecimento;
+    public Endereco converter() {
+        return new Endereco(
+                latitude,
+                longitude,
+                pais,
+                estado,
+                cidade,
+                logradouro,
+                complemento,
+                numero,
+                cep);
     }
 }

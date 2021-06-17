@@ -17,15 +17,18 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/estabelecimento")
+@RequestMapping("raizama/estabelecimento")
 public class EstabelecimentoController {
 
     @Autowired
     private EstabelecimentoRepository estabelecimentoRepository;
 
     @GetMapping
-    public List<EstabelecimentoDto> listarEstabelecimentos() {
-        List<Estabelecimento> estabelecimentos = estabelecimentoRepository.findAll();
+    public List<EstabelecimentoDto> listarEstabelecimentosBuscaSite(
+            @RequestParam String term,
+            @RequestParam String cidade,
+            @RequestParam List<String> praticas) {
+        List<Estabelecimento> estabelecimentos = estabelecimentoRepository.searchAll(term, cidade, praticas);
         return EstabelecimentoDto.converter(estabelecimentos);
     }
 
@@ -40,19 +43,19 @@ public class EstabelecimentoController {
         URI uri = uriBuilder.path("/estabelecimento/{id}").buildAndExpand(estabelecimento.getId()).toUri();
         return ResponseEntity.created(uri).body(new EstabelecimentoDto(estabelecimento));
     }
-
-    @PutMapping("/{id}")
-    @Transactional
-    public ResponseEntity<EstabelecimentoDto> atualizar(@PathVariable Long id,
-                                                 @RequestBody @Valid AtualizacaoEstabelecimentoForm form) {
-        Optional<Estabelecimento> optional = estabelecimentoRepository.findById(id);
-        if (optional.isPresent()) {
-            Estabelecimento estabelecimento = form.atualizar(id, estabelecimentoRepository);
-            return ResponseEntity.ok(new EstabelecimentoDto(estabelecimento));
-        }
-
-        return ResponseEntity.notFound().build();
-    }
+//
+//    @PutMapping("/{id}")
+//    @Transactional
+//    public ResponseEntity<EstabelecimentoDto> atualizar(@PathVariable Long id,
+//                                                 @RequestBody @Valid AtualizacaoEstabelecimentoForm form) {
+//        Optional<Estabelecimento> optional = estabelecimentoRepository.findById(id);
+//        if (optional.isPresent()) {
+//            Estabelecimento estabelecimento = form.atualizar(id, estabelecimentoRepository);
+//            return ResponseEntity.ok(new EstabelecimentoDto(estabelecimento));
+//        }
+//
+//        return ResponseEntity.notFound().build();
+//    }
 
     @DeleteMapping("/{id}")
     @Transactional
